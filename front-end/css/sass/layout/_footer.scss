@@ -1,0 +1,11 @@
+footer {
+    a {
+        color: $colorPrimary;
+        text-decoration: none;
+        padding: 0 15px;
+        &:hover {
+            color: $colorSecondary !important;
+        }
+    }
+
+}

@@ -1,0 +1,22 @@
+.navbar-collapse {
+    .nav-item {
+        border-top: 3px solid transparent;
+        line-height: 75px;
+        padding: 0 15px;
+        &:hover {
+            border-top: 3px solid $colorPrimary;
+            background-color: #915cf355;
+        }
+        &.active {
+            border-top: 3px solid $colorPrimary;
+            background-color: #915cf355;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            &:hover {
+                color: $colorPrimary!important;
+            }
+        }
+    }   
+}

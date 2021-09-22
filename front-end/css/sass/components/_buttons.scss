@@ -1,0 +1,38 @@
+.btn {
+    
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px 25px;
+    font-weight: bold;
+    &--choice {
+        border: 1px solid $colorPrimary;
+        color: $colorPrimary;
+        &:hover{
+            background: linear-gradient(to bottom right, $colorPrimary,  $colorSecondary) !important;
+            color: white !important;
+        }   
+    }
+    &--success {
+        border: 1px solid $colorPrimary;
+        color: $colorPrimary;
+        &:hover {
+            background: linear-gradient(to bottom right, $colorPrimary, white, $colorTertiary) !important;
+            color: $colorPrimary !important;
+            
+        }
+    }
+    &--cancel {
+        border: 1px solid $colorSecondary;
+        color: $colorSecondary;
+        &:hover {
+            background: linear-gradient(to bottom right, $colorSecondary, white, #e27332d2) !important;
+            color: $colorSecondary !important;
+        }
+    }
+}
+
+
+
+
+
+

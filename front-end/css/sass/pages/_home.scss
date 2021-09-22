@@ -1,0 +1,21 @@
+
+
+.home__jumbotron h1, .home__jumbotron hr {
+    color: $colorPrimary;
+    
+}
+
+.home__jumbotron h2, .home__jumbotron p {
+    color: $colorSecondary;
+}
+
+.home__jumbotron {
+    background-image: url(../../back-end/images/teddy_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    text-shadow: 1px 2px 3px #000;
+    
+}
+
