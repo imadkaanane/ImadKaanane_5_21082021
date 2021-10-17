@@ -1,13 +1,12 @@
 //Mise à jour du basketPreview
 basketPreview();
-
+const titleBasket = document.getElementById("titleBasket");
 const fullBasket = document.getElementById("basket");
 // indique que le panier est vide
 if (basket.length < 1) {
-
     //Construction d'un panier vide...
+    titleBasket.innerHTML = `Votre panier est vide`
     fullBasket.innerHTML = `
-        <h1 class="fs-4 text-center text-light bg-title">Votre panier est vide</h1>
         <div class="col text-center">
             <img src="../back-end/images/sadTeddy.jpg" class="img-fluid">
             <h3>Oups!! Votre panier semble être vide pour revenir à l'acceuil veuillez cliquez ci dessous </h3>
@@ -16,11 +15,7 @@ if (basket.length < 1) {
 
     // sinon affiche le tableau avec les produits
 } else {
-    const titleBasket = document.createElement("h1");
-    titleBasket.classList.add("fs-4", "text-center", "text-light", "bg-title");
-    fullBasket.prepend(titleBasket);
     titleBasket.innerHTML = `Contenu du panier`;
- 
     fullBasket.classList.add("row", "p-0", "m-0", "align-items-center");
     for (product of basket) {
         displayProductListTable(product);
@@ -76,6 +71,7 @@ if (basket.length < 1) {
 
     order.addEventListener("click", (event) => {
         // on prépare les infos pour l'envoie en POST
+        
         let contact = {
             firstName: document.getElementById("firstName").value,
             lastName: document.getElementById("lastName").value,

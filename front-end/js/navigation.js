@@ -1,9 +1,9 @@
 var btnContainer = document.getElementById("myNavbar");
 
-// Get all buttons with class="btn" inside the container
+// Obtenez tous les boutons avec class="btn" à l'intérieur du conteneur
 var btns = btnContainer.getElementsByClassName("nav-item");
 
-// Loop through the buttons and add the active class to the current/clicked button
+// Parcourez les boutons et ajoutez la classe active au bouton actuel/cliqué
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");

@@ -1,16 +1,5 @@
 // Mise a jour du panier
 basketPreview();
-// Chercher (fetch) l'URL
-fetch(url)
-.then((response) => response.json())
-.then((data) => {
-    addCards(data);
-})
-.catch(e => {
-    const title = document.querySelector(".cards__title");   
-    title.style.display = "none";
-    errorMessage();
-});
 
 // fonction pour la création des cards de la page d'accueil
 function addCards(data) {
@@ -44,3 +33,15 @@ function addCards(data) {
         </div>`;
     }
 }
+
+// Chercher (fetch) l'URL
+fetch(url)
+.then((response) => response.json())
+.then((data) => {
+    addCards(data);
+})
+.catch(e => {
+    const title = document.querySelector(".cards__title");   
+    title.style.display = "none";
+    errorMessage();
+});

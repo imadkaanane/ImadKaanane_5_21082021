@@ -12,8 +12,7 @@ fetch(newUrl)
 .then((response) => response.json())
 .then((data) => {
     const product = data;
-    addCard(data);
-    addColors(data);
+
     // fonction pour la création de la card de la page produit
     function addCard(product) {
 
@@ -43,6 +42,8 @@ fetch(newUrl)
             versionChoice.innerHTML += `<option value="${colors}">${colors}</option>`;
         }
     }
+    addCard(data);
+    addColors(data);
 
 
     // ajout du produit dans le panier
@@ -90,8 +91,6 @@ fetch(newUrl)
         }
         basketPreview();
 
-        modalAddProductToBasket(data);
-
         // Afichage du modal pour confirmer l'adoption du produitchoisi
         function modalAddProductToBasket(product){
             const productAlertMessage = document.getElementById("modal-dialog");
@@ -116,6 +115,7 @@ fetch(newUrl)
                 </div>
             </div>`  
         }
+        modalAddProductToBasket(data);
     });
 })
 .catch(e => {

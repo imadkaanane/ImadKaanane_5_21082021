@@ -8,23 +8,22 @@ var textArr = [
 ]
 
 var currentTextIndex = -1
-
 var letterIndex = -1
 
 function addLetter(){
-  // increment letterIndex to get to the next letter
+  // incrémenter letterIndex pour passer à la lettre suivante
   letterIndex++
   //
   if(letterIndex < text.length) {
-    //ADD A DELAY
+    //AJOUTER UN DELAI
     setTimeout( function() {
-      // add letter
+      // ajouter une lettre
       textAnimated.textContent += text[letterIndex]
-      // call itself 
+      // l'appeler
       addLetter()
     }, 100)
   }else {
-    // call removeLetter after a delay 
+    // appeler removeLetter après un délai
     setTimeout( function() {
     removeLetter()
     }, 2000)
@@ -32,40 +31,40 @@ function addLetter(){
 }
 
 function removeLetter(){
-  // decrement letterIndex to get to the next letter
+  // décrémenter letterIndex pour passer à la lettre suivante
   letterIndex--
   //
   if(letterIndex >= 0) {
-    //ADD A DELAY
+    //AJOUTER UN RETARD
     setTimeout( function() {
-      // remove letter
+      // supprimer la lettre
       textAnimated.textContent = text.slice(0, letterIndex)
-      // call itself 
+      // l'appeler 
       removeLetter()
     }, 100)
   }else {
-    // no more letters to remove
-    // doesn't call addLetter anymore
-    // call updateText instead
+    // plus de lettres à supprimer
+    // ne plus appeler addLetter
+    // appelez updateText à la place
     updateText()
   }
 }
 
 function updateText() {
-    //increment currentTextIndex to switch to the next sentence
+    //incrémenter currentTextIndex pour passer à la phrase suivante
     currentTextIndex++
 
-    //go to the first string index when currentTextIndex has reached the last one
+    //aller au premier index de chaîne lorsque currentTextIndex a atteint le dernier
   if(currentTextIndex === textArr.length) {
     currentTextIndex = 0
   }
-    //update text 
+    //mettre à jour le texte 
     text = textArr[currentTextIndex]
-    //call addLetter and get the animation going
+    //appelez addLetter et lancez l'animation
     addLetter()
 }
 
-//the initial call to start everything
+//l'appel initial pour tout commencer
 updateText()
 
 

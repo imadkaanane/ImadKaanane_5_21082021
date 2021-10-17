@@ -1,10 +1,11 @@
+
 const order = JSON.parse(localStorage.getItem("order")) || [];
 const date = JSON.parse(localStorage.getItem("date")) || [];
 
 // affiche Mes informations
 const informations = document.getElementById("contact");
 informations.innerHTML += `
-    <div class="col text-center">
+    <div class="col text-center my-5 py-3">
         <h1 class="text-center fs-2 my-5 bg-title text-white">Félicitations</h1>
         <img src="../back-end/images/happyTeddy.jpg" class="img-fluid w-25" >
         <p>Votre commande a bien été prise en compte, Merci de nous avoir fait confiance.</p>
@@ -55,9 +56,8 @@ clickHome.addEventListener("click", () => {
     clearBasket();
 });
 
-const clickBasket = document.getElementById("basketPreview");
-clickBasket.innerHTML = `
-Panier <span class="badge rounded-pill bg-secondary  align-middle my-auto">0</span>`;
+const clickBasket = document.getElementById("basketPreviewEnd");
+
 clickBasket.addEventListener("click", ( ) => {
     clearBasket();
 });
