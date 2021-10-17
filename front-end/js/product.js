@@ -15,24 +15,52 @@ fetch(newUrl)
 
     // fonction pour la création de la card de la page produit
     function addCard(product) {
+        const cardSelected = document.getElementById('cardSelected');
+        cardSelected.innerHTML = `
+        <div class="card px-0 mx-3 my-4 border-0">
+            <div class="row g-0 shadow p-3 rounded " id="product">
+                <div class="col-md-7" id="productImage">
+                    <img src="${product.imageUrl}" class="img-fluid img-thumbnail" alt="${product.name}">
+                </div>
+                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-sm-7 mt-3" id="productName">
+                                <h3 class="card-title">${product.name}</h3>
+                            </div>
+                            <div class="col-6 col-sm-5 text-end mt-3" id="productPrice">
+                                <h3 class="card-title">${convertPrice(product.price)}</h3>
+                            </div>
+                        </div>
+                        <select id="option" class="form-select mb-3" aria-label="choisir la version">
+                        </select>
+                        <div class="mb-3" id="productDescription">
+                            <p class="card-text">${product.description}</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 col-sm-3 col-md-5 col-lg-4 col-xl-3 my-auto">
+                                <p>Quantité :</p>
+                            </div>
+                            <div class="col-4 col-sm-3 col-md-4 col-lg-3 ">
+                                <select id="quantity" class="form-select mb-3" aria-label="Quantité">
+                                    <option selected value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
 
-        // insertion des information de la card du produit
-        const selectionProductImage = document.getElementById("productImage");
-        selectionProductImage.innerHTML += `
-            <img src="${product.imageUrl}" class="img-fluid img-thumbnail" alt="${product.name}">
-            `;
-        const selectionProductName = document.getElementById("productName");
-        selectionProductName.innerHTML += `
-            <h3 class="card-title">${product.name}</h3>
-            `;
-        const selectionProductPrice = document.getElementById("productPrice");
-        selectionProductPrice.innerHTML += `
-            <h3 class="card-title">${convertPrice(product.price)}</h3>
-            `;
-        const selectionProductDescription = document.getElementById("productDescription");
-        selectionProductDescription.innerHTML += `
-            <p class="card-text">${product.description}</p>
-            `;
+                        <div class="d-flex align-items-end justify-content-end">
+                            <button id="btnAddBasket" class="btn btn--choice" aria-controls="productModal"  data-bs-toggle="modal"
+                                data-bs-target="#productModal">Ajouter au panier</button>
+                        </div>        
+                    </div>
+
+                </div>
+            </div>
+        </div>`;
     }
 
     // fonction pour l'ajout de la couleur du produit
@@ -50,7 +78,6 @@ fetch(newUrl)
     const buttonAddBasket = document.getElementById("btnAddBasket");
     buttonAddBasket.addEventListener("click", (e) => {
         e.preventDefault();
-        
         const list = document.getElementById("option");
         const quantity = document.getElementById("quantity");
         
@@ -64,8 +91,7 @@ fetch(newUrl)
             quantity.value,
             product.imageUrl
         );
-    
-        
+          
         // vérifie s'il est déja présent
         // si oui, dejaPresent en true et sauvegarde sa place dans le localStorage
         let isAlreadyPresent;
@@ -89,6 +115,7 @@ fetch(newUrl)
             basket.push(objectProduct);
             localStorage.setItem("teddies", JSON.stringify(basket));
         }
+
         basketPreview();
 
         // Afichage du modal pour confirmer l'adoption du produitchoisi
