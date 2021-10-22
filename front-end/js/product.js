@@ -146,9 +146,9 @@ fetch(newUrl)
     });
 })
 .catch(e => {
-    const card = document.getElementById("product");   
+    const card = document.getElementById("cardSelected");   
     card.style.display = "none";
-    document.querySelector(".error").innerHTML += `
+    card.innerHTML += `
     <h1 class="section__error my-5 text-center text-danger"><b>"Le produit demandé est introuvable "<b></h1>
     `;
 });

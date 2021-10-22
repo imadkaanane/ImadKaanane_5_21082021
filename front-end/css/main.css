@@ -39,10 +39,6 @@ footer a:hover {
   margin-top: 120px;
 }
 
-.cards {
-  padding-top: 95px;
-}
-
 .card {
   background: linear-gradient(to bottom right, #ca7b4dd2, #915cf3ce, #5c78f3ce);
   border-radius: 20px;

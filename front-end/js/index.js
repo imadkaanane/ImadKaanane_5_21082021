@@ -41,7 +41,5 @@ fetch(url)
     addCards(data);
 })
 .catch(e => {
-    const title = document.querySelector(".cards__title");   
-    title.style.display = "none";
     errorMessage();
 });
