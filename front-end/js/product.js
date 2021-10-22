@@ -15,7 +15,7 @@ fetch(newUrl)
 
     // fonction pour la création de la card de la page produit
     function addCard(product) {
-        const cardSelected = document.getElementById('cardSelected');
+        const cardSelected = document.getElementById('cards');
         cardSelected.innerHTML = `
         <div class="card px-0 mx-3 my-4 border-0">
             <div class="row g-0 shadow p-3 rounded " id="product">
@@ -146,11 +146,7 @@ fetch(newUrl)
     });
 })
 .catch(e => {
-    const card = document.getElementById("cardSelected");   
-    card.style.display = "none";
-    card.innerHTML += `
-    <h1 class="section__error my-5 text-center text-danger"><b>"Le produit demandé est introuvable "<b></h1>
-    `;
+    errorMessage();
 });
 
     
