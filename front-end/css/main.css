@@ -3,23 +3,20 @@
   background: linear-gradient(to bottom right, #ca7b4dd2, #915cf3ce, #5c78f3ce);
 }
 
-.navbar-collapse .nav-item {
+.navbar-collapse .nav-link {
   border-top: 3px solid transparent;
-  line-height: 75px;
-  padding: 0 15px;
-}
-.navbar-collapse .nav-item:hover {
-  border-top: 3px solid #915cf3ce;
-  background-color: #915cf355;
-}
-.navbar-collapse .nav-item.active {
-  border-top: 3px solid #915cf3ce;
-  background-color: #915cf355;
-}
-.navbar-collapse .nav-item .nav-link {
+  padding: 5px 20px !important;
+  line-height: 80px;
   font-weight: 500;
 }
-.navbar-collapse .nav-item .nav-link:hover {
+.navbar-collapse .nav-link:hover {
+  color: #915cf3ce !important;
+  border-top: 3px solid #915cf3ce;
+  background-color: #915cf355;
+}
+.navbar-collapse .nav-link.active {
+  border-top: 3px solid #915cf3ce;
+  background-color: #915cf355;
   color: #915cf3ce !important;
 }
 
