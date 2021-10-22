@@ -21,24 +21,33 @@
     </head>
 
 <body>
-    <nav id="myNavbar" class="col navbar navbar-expand-md fixed-top navbar-light bg-white px-3 p-0">
-        <a class="navbar-brand " href="index.html">
-            <img src="../back-end/images/logo.png" height="70" alt="Logo Orinoco" />
-        </a>
-        <button id="nav-toggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="toggle_nav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navbarContent" class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav text-center">
-                <li class="nav-item active">
-                    <a class="nav-link text-dark h5" href="./">Accueil</a>
-                </li>
-
-                <li class="nav-item " >
-                    <a class="nav-link text-dark h5" href="panier.html" id="basketPreview">Panier <span class="badge rounded-pill bg-secondary align-middle my-auto">0</span>`</a>
-                    <!-- JS pour compteur/tooltip -->
-                </li>
-             
+    <nav id="myNavbar" class="col navbar navbar-expand-md fixed-top navbar-light bg-white p-0">
+        <div class="container">
+            <a class="navbar-brand " href="index.html">
+                <img src="../back-end/images/logo.png" height="70" alt="Logo Orinoco" />
+            </a>
+            <button id="nav-toggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="toggle_nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarContent" class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav text-center" role="tablist">
+                    <li class="nav-item ">
+                        <a class="nav-link text-dark" href="index.html" id="acceuil">Accueil</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-dark" href="index.html#product" id="product">Produit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-dark" href="panier.html" id="basketPreview"></a>
+                        <!-- insertion la fonction basketPreview -->
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <main id="mainbloc mt-5 pt-5">
