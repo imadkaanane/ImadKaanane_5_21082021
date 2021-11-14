@@ -100,15 +100,12 @@ fetch(newUrl)
             if (products.name == objectProduct.name && products.option == objectProduct.option) {
                 isAlreadyPresent = true;
                 indexModification = basket.indexOf(products);
-            } else {
-                isAlreadyPresent = false;
-            }
+            } 
         }
 
         // si déjaPresent incrémente seulement la quantité
         if (isAlreadyPresent) {
-            basket[indexModification].quantity =
-                +basket[indexModification].quantity + +objectProduct.quantity;
+            basket[indexModification].quantity = +basket[indexModification].quantity + +objectProduct.quantity;
             localStorage.setItem("teddies", JSON.stringify(basket));
             // si non, ajoute le produit au localStorage
         } else {
