@@ -43,11 +43,7 @@ fetch(newUrl)
                             </div>
                             <div class="col-4 col-sm-3 col-md-4 col-lg-3 ">
                                 <select id="quantity" class="form-select mb-3" aria-label="Quantité">
-                                    <option selected value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                 
                                 </select>
                             </div>
                         </div>
@@ -70,9 +66,16 @@ fetch(newUrl)
             versionChoice.innerHTML += `<option value="${colors}">${colors}</option>`;
         }
     }
+    // fonction pour la quantité du produit qu'on peut selectionner
+    function addAmount(){
+        const Amount = document.getElementById("quantity");
+        for (let numbers = 1; numbers <= 10; numbers++) {    
+            Amount.innerHTML += `<option value="${numbers}">${numbers}</option>`;
+        }
+    }
     addCard(data);
     addColors(data);
-
+    addAmount();
 
     // ajout du produit dans le panier
     const buttonAddBasket = document.getElementById("btnAddBasket");
