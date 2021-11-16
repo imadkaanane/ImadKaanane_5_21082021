@@ -95,8 +95,8 @@ function clearBasket() {
 }
 // fonction message d'erreur
 function errorMessage() {
-
-    document.querySelector(".cards").innerHTML += `
-    <h1 class="section__error text-center text-danger"><b>"Nous ne parvenons pas à vous connecter, vérifiez votre réseau et reessayer"<b></h1>
+    main = document.getElementById("main");
+    main.innerHTML = `
+    <h1 class="mt-5 text-center text-danger"><b>"Nous ne parvenons pas à vous connecter, vérifiez votre réseau et reessayer"<b></h1>
     `;
 }

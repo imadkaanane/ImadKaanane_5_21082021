@@ -79,7 +79,7 @@ fetch(newUrl)
 
     // ajout du produit dans le panier
     const buttonAddBasket = document.getElementById("btnAddBasket");
-    buttonAddBasket.addEventListener("click", (e) => {
+    buttonAddBasket.addEventListener("click", function(e) {
         e.preventDefault();
         const list = document.getElementById("option");
         const quantity = document.getElementById("quantity");
@@ -146,8 +146,6 @@ fetch(newUrl)
     });
 })
 .catch(e => {
-    const card = document.getElementById('product');
-    card.style.display = " none";
     errorMessage();
 });
 

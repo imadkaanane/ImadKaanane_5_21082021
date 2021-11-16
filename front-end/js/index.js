@@ -41,7 +41,9 @@ fetch(url)
     addCards(data);
 })
 .catch(e => {
-    const hero = document.getElementById('hero');
-    hero.style.display = "none";
+    hero = document.getElementById('hero');
+    products = document.getElementById('products');
+    hero.style.display = 'none';
+    products.style.display = 'none';
     errorMessage();
 });
