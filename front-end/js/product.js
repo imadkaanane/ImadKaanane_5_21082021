@@ -39,7 +39,7 @@ fetch(newUrl)
         let isAlreadyPresent;
         let indexModification;
         for (products of basket) {
-            if (products.name == objectProduct.name && products.option == objectProduct.option) {
+            if (products.name == product.name && products.option == list.value) {
                 isAlreadyPresent = true;
                 indexModification = basket.indexOf(products);
             } 
@@ -51,7 +51,7 @@ fetch(newUrl)
             localStorage.setItem("teddies", JSON.stringify(basket));
             // si non, ajoute le produit au localStorage
         } else {
-            basket.push(objectProduct);
+            basket.unshift(objectProduct);
             localStorage.setItem("teddies", JSON.stringify(basket));
         }
 
