@@ -12,67 +12,6 @@ fetch(newUrl)
 .then((response) => response.json())
 .then((data) => {
     const product = data;
-
-    // fonction pour la création de la card de la page produit
-    function addCard(product) {
-        const cardSelected = document.getElementById('cardSelected');
-        cardSelected.innerHTML = `
-        <div class="card px-0 mx-3 my-4 border-0">
-            <div class="row g-0 shadow p-3 rounded " id="product">
-                <div class="col-md-7" id="productImage">
-                    <img src="${product.imageUrl}" class="img-fluid img-thumbnail" alt="${product.name}">
-                </div>
-                <div class="col-md-5 d-flex justify-content-center align-items-center">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6 col-sm-7 mt-3" id="productName">
-                                <h3 class="card-title">${product.name}</h3>
-                            </div>
-                            <div class="col-6 col-sm-5 text-end mt-3" id="productPrice">
-                                <h3 class="card-title">${convertPrice(product.price)}</h3>
-                            </div>
-                        </div>
-                        <select id="option" class="form-select mb-3" aria-label="choisir la version">
-                        </select>
-                        <div class="mb-3" id="productDescription">
-                            <p class="card-text">${product.description}</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-5 col-sm-3 col-md-5 col-lg-4 col-xl-3 my-auto">
-                                <p>Quantité :</p>
-                            </div>
-                            <div class="col-4 col-sm-3 col-md-4 col-lg-3 ">
-                                <select id="quantity" class="form-select mb-3" aria-label="Quantité">
-                                 
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-end justify-content-end">
-                            <button id="btnAddBasket" class="btn btn--choice" aria-controls="productModal"  data-bs-toggle="modal"
-                                data-bs-target="#productModal">Ajouter au panier</button>
-                        </div>        
-                    </div>
-
-                </div>
-            </div>
-        </div>`;
-    }
-
-    // fonction pour l'ajout de la couleur du produit
-    function addColors(product) {
-        const versionChoice = document.getElementById("option");
-        for (let colors of product.colors) {
-            versionChoice.innerHTML += `<option value="${colors}">${colors}</option>`;
-        }
-    }
-    // fonction pour la quantité du produit qu'on peut selectionner
-    function addAmount(){
-        const Amount = document.getElementById("quantity");
-        for (let numbers = 1; numbers <= 10; numbers++) {    
-            Amount.innerHTML += `<option value="${numbers}">${numbers}</option>`;
-        }
-    }
     addCard(data);
     addColors(data);
     addAmount();
