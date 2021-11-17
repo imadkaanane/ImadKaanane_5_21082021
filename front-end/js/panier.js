@@ -55,8 +55,8 @@ if (basket.length < 1) {
     totalPrice();
 
     //vide le panier
-    const buttonClearBASKET = document.getElementById("clearBasket");
-    buttonClearBASKET.addEventListener("click", () => {
+    const buttonClearBasket = document.getElementById("clearBasket");
+    buttonClearBasket.addEventListener("click", () => {
         clearBasket();
         location.reload();
     });

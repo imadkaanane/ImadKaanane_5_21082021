@@ -47,7 +47,7 @@ fetch(newUrl)
 
         // si déjaPresent incrémente seulement la quantité
         if (isAlreadyPresent) {
-            basket[indexModification].quantity = +basket[indexModification].quantity + +objectProduct.quantity;
+            basket[indexModification].quantity += +quantity.value;
             localStorage.setItem("teddies", JSON.stringify(basket));
             // si non, ajoute le produit au localStorage
         } else {

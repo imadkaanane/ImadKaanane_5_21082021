@@ -2,6 +2,21 @@
 const url = "http://localhost:3000/api/teddies";
 const basket = JSON.parse(localStorage.getItem("teddies")) || [];
 
+// calcul du basketPreview compteur panier
+function basketPreview() {
+    let addBasketPreview = document.getElementById("basketPreview");
+    if (basket.length == 0) {
+        addBasketPreview.innerHTML = `Panier <span
+        class="badge rounded-pill bg-title  align-middle my-auto">0</span>`;
+    } else {
+        let calculBasketPreview = 0;
+        for (product of basket) {
+            calculBasketPreview += product.quantity;
+        }
+        addBasketPreview.innerHTML = `Panier <span class="badge rounded-pill bg-title align-middle my-auto">${calculBasketPreview}</span>`;
+        
+    }
+}
 
 // Convertion du prix
 function convertPrice(productPrice) {
@@ -170,21 +185,6 @@ function totalPrice() {
 }
 
 
-// calcul du basketPreview compteur panier
-function basketPreview() {
-    let addBasketPreview = document.getElementById("basketPreview");
-    if (basket.length == 0) {
-        addBasketPreview.innerHTML = `Panier <span
-        class="badge rounded-pill bg-title  align-middle my-auto">0</span>`;
-    } else {
-        let calculBasketPreview = 0;
-        for (product of basket) {
-            calculBasketPreview += product.quantity;
-        }
-        addBasketPreview.innerHTML = `Panier <span class="badge rounded-pill bg-title align-middle my-auto">${calculBasketPreview}</span>`;
-        
-    }
-}
 
 // supprimer le Panier
 function clearBasket() {
