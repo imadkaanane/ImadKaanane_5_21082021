@@ -4,15 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch css/main.scss:css/main.css",
-    "deploy": "gh-pages -d dist"
+    "sass": "sass --watch css/main.scss:css/main.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.1.3",
-    "gh-pages": "^3.2.3",
-    "homepage": "https://imadkaanane.github.io/ImadKaanane_5_21082021/front-end/", 
     "sass": "^1.41.1"
   }
 }
