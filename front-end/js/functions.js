@@ -18,59 +18,25 @@ function basketPreview() {
     }
 }
 
-// ANIMATION TEXT
-var textAnimated = document.querySelector(".typing")
-var text = ""
-var textArr = ["Orinoco", "Bienvenue sur Ori-bears !"]
-var currentTextIndex = -1
-var letterIndex = -1
+//Get the button
+var mybutton = document.getElementById("myBtn");
 
-function addLetter() {  // incrémenter letterIndex pour passer à la lettre suivante
-    letterIndex++
-    if (letterIndex < text.length) {  //AJOUTER UN DELAI
-        setTimeout(function () { // ajouter une lettre
-            textAnimated.textContent += text[letterIndex]
-            // l'appeler
-            addLetter()
-        }, 100)
-    } else {  // appeler removeLetter après un délai
-        setTimeout(function () {removeLetter()}, 2000)
-    }
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
 }
 
-function removeLetter() {
-    // décrémenter letterIndex pour passer à la lettre suivante
-    letterIndex--
-    if (letterIndex >= 0) {
-        //AJOUTER UN RETARD
-        setTimeout(function () {
-            // supprimer la lettre
-            textAnimated.textContent = text.slice(0, letterIndex)
-            // l'appeler 
-            removeLetter()
-        }, 100)
-    } else {
-        // plus de lettres à supprimer
-        // ne plus appeler addLetter
-        // appelez updateText à la place
-        updateText()
-    }
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
-
-function updateText() {
-    //incrémenter currentTextIndex pour passer à la phrase suivante
-    currentTextIndex++
-    //aller au premier index de chaîne lorsque currentTextIndex a atteint le dernier
-    if (currentTextIndex === textArr.length) {
-        currentTextIndex = 0
-    }
-    //mettre à jour le texte 
-    text = textArr[currentTextIndex]
-    //appelez addLetter et lancez l'animation
-    addLetter()
-}
-//l'appel initial pour tout commencer
-updateText();
 
 // Convertion du prix
 function convertPrice(productPrice) {
@@ -93,18 +59,18 @@ function addCards(data) {
         const price = convertPrice(teddies.price);
         card.innerHTML += `
         
-        <div class="cards__container col-sm-12 col-md-12 col-lg-6 my-3">
+        <div class="cards__container col-sm-12 col-md-6 col-lg-4 my-3">
             <div class="card border  shadow">
                 <div class="card-body">
                     <div class="row">
                         <a href="product.html?_id=${teddies._id}">
                             <img src="${teddies.imageUrl}" class="card__img img-fluid img-thumbnail" alt="${teddies.name}">
                         </a>
-                        <div class="col-6 col-sm-7 mt-3" >
-                            <h4 class="card-title text-white">${teddies.name}</h4>
+                        <div class="col-6 col-sm-7 mt-2" >
+                            <h5 class="card-title text-white">${teddies.name}</h4>
                         </div>
-                        <div class="col-6 col-sm-5 text-end mt-3">
-                            <h4 class="card-title text-white">${price}</h4>
+                        <div class="col-6 col-sm-5 text-end mt-2">
+                            <h5 class="card-title text-white">${price}</h4>
                         </div>
                     </div>
                     <p class="card-text text-white">${teddies.description}</p>
@@ -129,35 +95,23 @@ function addCard(product) {
             <div class="col-md-5 d-flex justify-content-center align-items-center">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-6 col-sm-7 mt-3" id="productName">
-                            <h3 class="card-title">${product.name}</h3>
-                        </div>
-                        <div class="col-6 col-sm-5 text-end mt-3" id="productPrice">
-                            <h3 class="card-title">${convertPrice(product.price)}</h3>
-                        </div>
+                        <div class="col-6 col-sm-7 mt-3" id="productName"><h3 class="card-title">${product.name}</h3></div>
+                        <div class="col-6 col-sm-5 text-end mt-3" id="productPrice"><h3 class="card-title">${convertPrice(product.price)}</h3></div>
                     </div>
-                    <select id="option" class="form-select mb-3" aria-label="choisir la version">
-                    </select>
-                    <div class="mb-3" id="productDescription">
-                        <p class="card-text">${product.description}</p>
-                    </div>
+                    <select id="option" class="form-select mb-3" aria-label="choisir la version"></select>
+                    <div class="mb-3" id="productDescription"><p class="card-text">${product.description}</p></div>
                     <div class="row">
                         <div class="col-5 col-sm-3 col-md-5 col-lg-4 col-xl-3 my-auto">
                             <p>Quantité :</p>
                         </div>
                         <div class="col-4 col-sm-3 col-md-4 col-lg-3 ">
-                            <select id="quantity" class="form-select mb-3" aria-label="Quantité">
-                             
-                            </select>
+                            <select id="quantity" class="form-select mb-3" aria-label="Quantité"></select>
                         </div>
                     </div>
-
                     <div class="d-flex align-items-end justify-content-end">
-                        <button id="btnAddBasket" class="btn btn--choice" aria-controls="productModal"  data-bs-toggle="modal"
-                            data-bs-target="#productModal">Ajouter au panier</button>
+                        <button id="btnAddBasket" class="btn btn--choice" aria-controls="productModal"  data-bs-toggle="modal" data-bs-target="#productModal">Ajouter au panier</button>
                     </div>        
                 </div>
-
             </div>
         </div>
     </div>`;

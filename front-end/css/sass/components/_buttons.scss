@@ -2,7 +2,7 @@
     
     border-radius: 15px;
     background-color: white;
-    padding: 15px 25px;
+    padding: 10px 20px;
     font-weight: bold;
     &--choice {
         border: 1px solid $colorPrimary;
@@ -31,6 +31,25 @@
     }
 }
 
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: linear-gradient(to bottom right, $colorSecondary, $colorPrimary, $colorTertiary);
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+#myBtn:hover {
+    background-color: #555;
+}
 
 
 

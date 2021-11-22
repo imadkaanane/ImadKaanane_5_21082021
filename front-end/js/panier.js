@@ -89,7 +89,6 @@ if (basket.length < 1) {
             (checkBox.checked == true)
         ) {
             event.preventDefault();
-
             // on stocke l'heure et la date de la commande
             const todayDate = new Date();
             let nowadays = todayDate.getDate();
@@ -100,15 +99,12 @@ if (basket.length < 1) {
             if (nowadays < 10) {
                 nowadays = "0" + nowadays;
             }
-
             if (month < 10) {
                 month = "0" + month;
             }
-
             if (todayHours < 10) {
                 todayHours = "0" + todayHours;
             }
-
             if (todayMinutes < 10) {
                 todayMinutes = "0" + todayMinutes;
             }

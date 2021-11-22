@@ -31,7 +31,7 @@ footer a:hover {
 
 .card__img {
   width: 100%;
-  height: 450px;
+  height: 300px;
   border-radius: 15px 15px 0 0;
 }
 
@@ -44,27 +44,18 @@ footer a:hover {
   border-radius: 20px;
 }
 
-.home__jumbotron h1, .home__jumbotron hr {
-  color: #915cf3ce;
+.card-text {
+  font-size: 15px;
 }
 
-.home__jumbotron h2, .home__jumbotron p {
-  color: #ca7b4dd2;
-}
-
-.home__jumbotron {
-  background-image: url(../../back-end/images/teddy_2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-  text-shadow: 1px 2px 3px #000;
+.cards__title {
+  font-size: 30px;
 }
 
 .btn {
   border-radius: 15px;
   background-color: white;
-  padding: 15px 25px;
+  padding: 10px 20px;
   font-weight: bold;
 }
 .btn--choice {
@@ -90,6 +81,26 @@ footer a:hover {
 .btn--cancel:hover {
   background: linear-gradient(to bottom right, #ca7b4dd2, white, #e27332d2) !important;
   color: #ca7b4dd2 !important;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to bottom right, #ca7b4dd2, #915cf3ce, #5c78f3ce);
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
 }
 
 /*# sourceMappingURL=main.css.map */

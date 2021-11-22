@@ -85,7 +85,7 @@ fetch(newUrl)
     });
 })
 .catch(e => {
-    errorMessage();
+    alert('Veuillez séléctionner votre produit !!!');
 });
 
     

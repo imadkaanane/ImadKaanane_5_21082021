@@ -38,7 +38,6 @@ const deletedItem = document.getElementsByClassName("rounded");
 for(element of deletedItem) {
     element.classList.add("d-none");
 }
-
 //affiche le prix total
 totalPrice();
 
@@ -54,12 +53,10 @@ const clickHome = document.getElementById("acceuil");
 clickHome.addEventListener("click", () => {
     clearBasket();
 });
-
 const clickProduct = document.getElementById("product");
 clickProduct.addEventListener("click", ( ) => {
     clearBasket();
 });
-
 const clickBasket = document.getElementById("basketPreviewEnd");
 clickBasket.addEventListener("click", ( ) => {
     clearBasket();
