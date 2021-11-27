@@ -89,14 +89,13 @@ footer a:hover {
   bottom: 20px;
   right: 30px;
   z-index: 99;
-  font-size: 18px;
   border: none;
   outline: none;
   background: linear-gradient(to bottom right, #ca7b4dd2, #915cf3ce, #5c78f3ce);
   color: white;
   cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 6px 15px;
+  border-radius: 5px;
 }
 
 #myBtn:hover {

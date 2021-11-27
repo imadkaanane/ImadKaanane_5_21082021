@@ -18,10 +18,10 @@ function basketPreview() {
     }
 }
 
-//Get the button
-var mybutton = document.getElementById("myBtn");
+// Bouton retour vers le haut
+const mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// Lorsque l'utilisateur fait défiler 20px du haut du document vers le bas, affichez le bouton
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -32,7 +32,7 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// Lorsque l'utilisateur clique sur le bouton, faites défiler vers le haut du document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
