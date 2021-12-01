@@ -52,30 +52,30 @@ function convertPrice(productPrice) {
 // fonction pour la création des cards de la page d'accueil
 function addCards(data) {
     //boucle pour chaque iteration d'un produit
-    for (teddies of data) {
+    for (product of data) {
         //recupère l'élément liste dans le HTML
         const card = document.getElementById("article");
         //convertit le prix
-        const price = convertPrice(teddies.price);
+        const price = convertPrice(product.price);
         card.innerHTML += `
         
         <div class="cards__container col-sm-12 col-md-6 col-lg-4 my-3">
             <div class="card border  shadow">
                 <div class="card-body">
                     <div class="row">
-                        <a href="product.html?_id=${teddies._id}">
-                            <img src="${teddies.imageUrl}" class="card__img img-fluid img-thumbnail" alt="${teddies.name}">
+                        <a href="product.html?_id=${product._id}">
+                            <img src="${product.imageUrl}" class="card__img img-fluid img-thumbnail" alt="${product.name}">
                         </a>
 
                     </div>
                     <div class="card-title d-flex justify-content-between mt-2" >
-                        <h5 class=" text-white">${teddies.name}</h5>
+                        <h5 class=" text-white">${product.name}</h5>
                         <h5 class=" text-white">${price}</h5>
                     </div>
                     
-                    <p class="card-text text-white">${teddies.description}</p>
+                    <p class="card-text text-white">${product.description}</p>
                     <div class="d-flex justify-content-end">
-                        <a href="product.html?_id=${teddies._id}" class="btn btn--choice">Acheter ce produit</a>
+                        <a href="product.html?_id=${product._id}" class="btn btn--choice">Acheter ce produit</a>
                     </div>
                 </div>
             </div>
