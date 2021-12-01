@@ -66,13 +66,13 @@ function addCards(data) {
                         <a href="product.html?_id=${teddies._id}">
                             <img src="${teddies.imageUrl}" class="card__img img-fluid img-thumbnail" alt="${teddies.name}">
                         </a>
-                        <div class="col-6 col-sm-7 mt-2" >
-                            <h5 class="card-title text-white">${teddies.name}</h4>
-                        </div>
-                        <div class="col-6 col-sm-5 text-end mt-2">
-                            <h5 class="card-title text-white">${price}</h4>
-                        </div>
+
                     </div>
+                    <div class="card-title d-flex justify-content-between mt-2" >
+                        <h5 class=" text-white">${teddies.name}</h5>
+                        <h5 class=" text-white">${price}</h5>
+                    </div>
+                    
                     <p class="card-text text-white">${teddies.description}</p>
                     <div class="d-flex justify-content-end">
                         <a href="product.html?_id=${teddies._id}" class="btn btn--choice">Acheter ce produit</a>
@@ -181,7 +181,7 @@ function displayProductListTable(product) {
 function displayTotalBasket() {
     let totalBasket = 0;
     basket.forEach((product) => {
-        totalBasket = totalBasket + product.price * product.quantity;
+        totalBasket +=  product.price * product.quantity;
     });
     return totalBasket;
 }

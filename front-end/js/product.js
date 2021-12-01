@@ -39,7 +39,7 @@ fetch(newUrl)
         let isAlreadyPresent;
         let indexModification;
         for (products of basket) {
-            if (products.name == product.name && products.option == list.value) {
+            if (products.id == newId && products.option == list.value) {
                 isAlreadyPresent = true;
                 indexModification = basket.indexOf(products);
             } 

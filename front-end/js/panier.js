@@ -90,27 +90,9 @@ if (basket.length < 1) {
         ) {
             event.preventDefault();
             // on stocke l'heure et la date de la commande
-            const todayDate = new Date();
-            let nowadays = todayDate.getDate();
-            let month = todayDate.getMonth() + 1;
-            let todayHours = todayDate.getHours();
-            let todayMinutes = todayDate.getMinutes();
-
-            if (nowadays < 10) {
-                nowadays = "0" + nowadays;
-            }
-            if (month < 10) {
-                month = "0" + month;
-            }
-            if (todayHours < 10) {
-                todayHours = "0" + todayHours;
-            }
-            if (todayMinutes < 10) {
-                todayMinutes = "0" + todayMinutes;
-            }
-
-            const date = nowadays + "-" + month + "-" + todayDate.getFullYear();
-            const hours = todayHours + ":" + todayMinutes;
+            var d = new Date();
+            var date = d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear();
+            var hours = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
             const fullDate = { date, hours };
             const infoOrder = JSON.parse(localStorage.getItem("date")) || [];
             infoOrder.push(fullDate);
